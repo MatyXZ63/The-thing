@@ -268,15 +268,22 @@
     noOption.addEventListener('mouseenter', teleport);
 
     // "Yes" checkbox + confetti
-    const yesCheck = document.getElementById('yes-check');
-    yesCheck.addEventListener('change', () => {
-        if (yesCheck.checked) {
-            document.getElementById('yes-msg').style.display = 'block';
-            timerEl.style.display = 'none';
-            confetti({ particleCount: 200, spread: 100, origin: { y: 0.7 } });
-            setTimeout(() => confetti({ particleCount: 100, spread: 150, origin: { y: 0.5 } }), 500);
-        }
-    });
+  const yesCheck = document.getElementById('yes-check');
+const yesMsg = document.getElementById('yes-msg');
+
+yesCheck.addEventListener('change', () => {
+    if (yesCheck.checked) {
+        yesMsg.textContent = "I knew you couldn't refuse me <3";
+        yesMsg.style.display = 'block';
+        timerEl.style.display = 'none';
+        confetti({ particleCount: 200, spread: 100, origin: { y: 0.7 } });
+        setTimeout(() => confetti({ particleCount: 100, spread: 150, origin: { y: 0.5 } }), 500);
+    } else {
+        yesMsg.textContent = "damn, you defeated this page, huh?";
+        yesMsg.style.color = '#5a2a4a';
+        yesMsg.style.display = 'block';
+    }
+});   
 </script>
 
 </body>
