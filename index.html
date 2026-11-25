@@ -100,7 +100,7 @@
 
         .timer {
             position: fixed;
-            top: 20px;
+            bottom: 20px;
             left: 20px;
             font-size: 1rem;
             color: #8b4a6a;
@@ -139,6 +139,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 <script>
+    // Falling stars
     const starsContainer = document.getElementById('stars');
     const starChars = ['✦', '✧', '⭐', '⋆', '✩', '✨'];
 
@@ -155,6 +156,7 @@
 
     setInterval(createStar, 200);
 
+    // Timer
     const timerEl = document.getElementById('timer');
     const timerEmoji = document.getElementById('timer-emoji');
     const timerText = document.getElementById('timer-text');
@@ -182,6 +184,7 @@
         }
     }, 1000);
 
+    // "No" checkbox teleport + shrink + text change
     const noOption = document.getElementById('no-option');
     const noCheck = document.getElementById('no-check');
     const noText = document.getElementById('no-text');
@@ -219,6 +222,7 @@
 
     noOption.addEventListener('mouseenter', teleport);
 
+    // "Yes" checkbox + confetti
     const yesCheck = document.getElementById('yes-check');
     yesCheck.addEventListener('change', () => {
         if (yesCheck.checked) {
